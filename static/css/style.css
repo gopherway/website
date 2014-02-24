@@ -215,6 +215,13 @@ header h5 {
     -o-animation: fadein 2s; 
 }
 
+header img#logo {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; 
+    -webkit-animation: fadein 2s; 
+    -o-animation: fadein 2s; 
+}
+
 header h5 a{
     color:white;
     text-decoration:none;
@@ -234,6 +241,10 @@ header h5 a{
     padding-right:10px;
     float:right;
     text-align:right;
+}
+
+img#logo {
+    float: left;
 }
 
 /* Countdown */
