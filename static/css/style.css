@@ -424,6 +424,7 @@ img#logo {
 *********************************************************************/
 
 #social {
+    position: relative;
     background-color:#34495e;
 }
 
@@ -458,6 +459,13 @@ img#logo {
     transform: translate(0px,-12px);
     -ms-transform: translate(0px,-12px);
     -webkit-transform: translate(0px,-12px);
+}
+
+img#social-gopher {
+    position: absolute;
+    bottom: -160px;
+    right: 5%;
+    width: 200px;
 }
 
 /********************************************************************
