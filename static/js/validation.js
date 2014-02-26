@@ -28,10 +28,7 @@
                // Disable submit button just after the form processed 1st time successfully.
                 $('#subscribe_button').attr({'disabled' : 'true', 'value' : 'SUBSCRIBING...' });
                 
-				/* Post Ajax function of jQuery to get all the data from the submission of the form as soon as the form sends the values to newsletter.php*/
-                $.post("newsletter.php", $("#n_letter").serialize(),function(result){
-                    //Check the result set from newsletter.php file.
-                    
+                $.post("/subscribe/", $("#n_letter").serialize(),function(result){
                     if(result == 1){
                         //If the email is sent successfully, remove the submit button
                          $('#subscribe_button').attr({'value' : 'SUBSCRIBED' });

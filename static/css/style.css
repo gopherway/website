@@ -189,7 +189,7 @@ header {
 }
 
 header h1 {
-    margin:60px 0;
+    margin: 30px 0;
     text-transform: uppercase;
     animation: fadein 3s;
     -moz-animation: fadein 3s; 
