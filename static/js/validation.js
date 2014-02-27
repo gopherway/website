@@ -29,14 +29,17 @@
                 $('#subscribe_button').attr({'disabled' : 'true', 'value' : 'SUBSCRIBING...' });
                 
                 $.post("/subscribe/", $("#n_letter").serialize(),function(result){
-                    if(result == 1){
+                    if(result.status == "ok"){
                         //If the email is sent successfully, remove the submit button
                          $('#subscribe_button').attr({'value' : 'SUBSCRIBED' });
+                         $('div#n_success').show();
+                         $('div#n_fail').hide();
                         
                     } else {
                         // Enable the submit button again
                         $('#subscribe_button').removeAttr('disabled').attr({'value' : 'NOTIFY ME' });
-                        alert('This email has already subscribed!');
+                        $('div#n_fail').show();
+                        $('div#n_success').hide();
                     }
                     
                 });
