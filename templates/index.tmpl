@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Coming Soon Page" />
-        <meta name="keywords" content="coming soon, responsive" />
-        <meta name="author" content="ZTApps" />
+        <meta name="description" content="Gopher Way - choose your own gopher way." />
+        <meta name="keywords" content="Go, Golang, Google Go, gopher, gophers" />
+        <meta name="author" content="Vasyl Nakvasiuk" />
         <link rel="shortcut icon" href="static/img/favicon.png" />
         <title>Gopher Way - choose your own gopher way</title>
 
@@ -18,7 +16,6 @@
         <link rel="stylesheet" media="screen" href="static/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="static/css/style.css" />
-
     </head>
 
     <body>
@@ -36,7 +33,8 @@
                         <h5><a href="mailto:support@ztapps.tk">info@gopherway.com</a></h5>
                     </div>
                 </div>
-                <h1 id="main-text">"Kiev GO conference" is coming</h1>
+                <h1 id="main-text">"Kiev GO meet-up" is coming</h1>
+                <h2 id="main-text">01.06.2014</h2>
                 <h3 id="second-text">Choose your own gopher way</h3>
 
                 <!-- Countdown start -->
@@ -80,7 +78,7 @@
                 <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
 
                 <!-- Newsletter Form -->
-                <form id="n_letter" class="row" role="form" method="post" name="newsletter" action="newsletter.php">
+                <form id="n_letter" class="row" role="form" method="post" name="newsletter" action="/subscribe/">
                     <div class="col-lg-4">
                         <!--[if lt IE 10]>
                             <div class="ie-placeholder n-name">Name</div>
@@ -126,7 +124,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3 item">
                         <i class="icon-fire"></i>
-                         <p>Kiev GO conference – the first Go conference in Ukraine. We want to create a meet-up for gophers and people who want to know something about the Go language.
+                         <p>Kiev GO meet-up – the first Go meet-up in Ukraine. We want to create a meet-up for gophers and people who want to know something about the Go language.
                         </p>
                     </div>
                     <div class="col-sm-6 col-lg-3 item">
@@ -192,8 +190,8 @@
                         <div>
                             <h2>Locate Us</h2>
                             <p>
-                                Kiev GO conference<br>
-                                Saksaganskogo 120 (Smart cafe "Bibliotech")<br>
+                                Kiev GO meet-up<br>
+                                31 Turivska St<br>
                                 Kyiv<br>
                                 Ukraine
                             </p>
@@ -252,7 +250,7 @@
                 }
              },
              marker:{
-                address: "Ukraine, Kyiv, Saksaganskogo 120",    //Paste address here
+                address: "31 Turivska St, Kyiv, Kyiv city, Ukraine",
                 options: {
                  icon: new google.maps.MarkerImage(
                    "static/img/marker.png",
@@ -265,9 +263,7 @@
         </script>
 
         <script>
-
             $(document).ready(function(){
-
                 $(window).scroll(function(){
                     if ($(this).scrollTop() > 100) {
                         $('.scrollup').fadeIn();
@@ -280,9 +276,7 @@
                     $("html, body").animate({ scrollTop: 0 }, 600);
                     return false;
                 });
-
             });
-
         </script>
 
         <!-- End Javascripts -->
