@@ -2,29 +2,28 @@ package main
 
 import (
 	"github.com/codegangsta/martini"
+	"github.com/martini-contrib/binding"
 	"github.com/martini-contrib/render"
 
-	"net/http"
+	"database/sql"
+	_ "github.com/lib/pq"
 )
 
-func SubscribeHandler(rnd render.Render, r *http.Request) {
-	name := r.FormValue("name")
-	email := r.FormValue("email")
-	print(name)
-
-	if email == "vaxxxa@gmail.com" {
-		rnd.JSON(200, map[string]string{"status": "ok"})
-	} else {
-		rnd.JSON(200, map[string]string{"status": "fail"})
+func PanicIf(err error) {
+	if err != nil {
+		panic(err)
 	}
 }
 
-func IndexHandler(r render.Render) {
-	r.HTML(200, "index", nil)
+func SetupDB() *sql.DB {
+	db, err := sql.Open("postgres", "dbname=gopherway sslmode=disable")
+	PanicIf(err)
+	return db
 }
 
 func main() {
 	m := martini.Classic()
+	m.Map(SetupDB())
 
 	// Serve static files from "static" directory.
 	StaticOptions := martini.StaticOptions{Prefix: "static"}
@@ -34,7 +33,7 @@ func main() {
 	m.Use(render.Renderer())
 
 	m.Get("/", IndexHandler)
-	m.Post("/subscribe/", SubscribeHandler)
+	m.Post("/subscribe/", binding.Form(Subscription{}), SubscribeHandler)
 
 	m.Run()
 }

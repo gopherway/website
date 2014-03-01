@@ -9,7 +9,7 @@
             var name = $('#n_name').val();
             var email = $('#n_email').val();
 
-         	// Form field validation
+            // Form field validation
             if(name.length == 0){
                 var error = true;
                 $('#n_name_error').fadeIn(500);
@@ -34,10 +34,10 @@
                          $('#subscribe_button').attr({'value' : 'SUBSCRIBED' });
                          $('div#n_success').show();
                          $('div#n_fail').hide();
-                        
                     } else {
                         // Enable the submit button again
                         $('#subscribe_button').removeAttr('disabled').attr({'value' : 'NOTIFY ME' });
+                        $('div#n_fail').html(result.errors);
                         $('div#n_fail').show();
                         $('div#n_success').hide();
                     }
