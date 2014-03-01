@@ -9,16 +9,17 @@ import (
 )
 
 func SubscribeHandler(rnd render.Render, formErr binding.Errors, sub Subscription, db *sql.DB) {
-	if formErr.Count() == 0 {
-		rows, err := db.Query(`INSERT INTO subscriptions
-			(name, email) VALUES ($1, $2)`, sub.Name, sub.Email)
+	var errors []string
 
-		PanicIf(err)
-		defer rows.Close()
+	if sub.Exist(db) {
+		errors = append(errors, "This email is already subscribed.")
+	}
+
+	if formErr.Count() == 0 && len(errors) == 0 {
+		sub.Save(db)
 
 		rnd.JSON(200, map[string]string{"status": "ok"})
 	} else {
-		var errors []string
 		for _, value := range formErr.Fields {
 			errors = append(errors, value)
 		}

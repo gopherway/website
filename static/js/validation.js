@@ -1,9 +1,9 @@
  $(document).ready(function(){
         $('#subscribe_button').click(function(e){
-            
+
             //Stop form submission & check the validation
             e.preventDefault();
-            
+
             // Variable declaration
             var error = false;
             var name = $('#n_name').val();
@@ -22,12 +22,12 @@
             }else{
                 $('#n_email_error').fadeOut(500);
             }
-            
+
             // If there is no validation error, next to process the mail function
             if(error == false){
                // Disable submit button just after the form processed 1st time successfully.
                 $('#subscribe_button').attr({'disabled' : 'true', 'value' : 'SUBSCRIBING...' });
-                
+
                 $.post("/subscribe/", $("#n_letter").serialize(),function(result){
                     if(result.status == "ok"){
                         //If the email is sent successfully, remove the submit button
@@ -41,8 +41,8 @@
                         $('div#n_fail').show();
                         $('div#n_success').hide();
                     }
-                    
+
                 });
             }
-        });    
+        });
     });
