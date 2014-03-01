@@ -1,3 +1,4 @@
 $ createdb gopherway
-$ psql gopherway < db.sql
+$ psql gopherway < migration/db.sql
 
+$ go run server.go models.go handlers.go
