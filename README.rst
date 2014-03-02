@@ -1,3 +1,6 @@
+$ cd $GOROOT/src/
+
+
 $ createdb gopherway
 $ psql gopherway < migration/db.sql
 
