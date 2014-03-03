@@ -1,5 +1,11 @@
-$ createdb gopherway
-$ psql gopherway < migration/db.sql
+Create database and migration:
 
-$ make install # Install dependencies packages.
-$ make # Run server.
+.. code:: bash
+    $ createdb gopherway
+    $ psql gopherway < migration/db.sql
+
+Install and run:
+
+.. code:: bash
+    $ make install # Install dependencies packages.
+    $ make # Run server.
