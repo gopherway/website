@@ -13,11 +13,7 @@ run:
 	go run *.go
 
 install:
-	go get "github.com/codegangsta/martini"
-	go get "github.com/martini-contrib/render"
-	go get "github.com/martini-contrib/binding"
-	go get "github.com/jessevdk/go-flags"
-	go get "github.com/lib/pq"
+	go get
 
 all: $(ALL)
 
