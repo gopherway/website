@@ -1,0 +1,6 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+Exist	/Users/vaxxxa/Documents/Projects/gocode/src/gopherway/models.go	/^func (sub Subscription) Exist(db *sql.DB) bool {$/;"	f	language:Go
+result	/Users/vaxxxa/Documents/Projects/gocode/src/gopherway/models.go	/^	var result int$/;"	v	language:Go
+Save	/Users/vaxxxa/Documents/Projects/gocode/src/gopherway/models.go	/^func (sub Subscription) Save(db *sql.DB) {$/;"	f	language:Go
+Subscription	/Users/vaxxxa/Documents/Projects/gocode/src/gopherway/models.go	/^type Subscription struct {$/;"	t	language:Go
+Validate	/Users/vaxxxa/Documents/Projects/gocode/src/gopherway/models.go	/^func (sub Subscription) Validate(errors *binding.Errors, req *http.Request) {$/;"	f	language:Go

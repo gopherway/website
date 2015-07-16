@@ -5,7 +5,6 @@ import (
 
 	"database/sql"
 	"net/http"
-	"regexp"
 )
 
 type Subscription struct {
@@ -14,11 +13,6 @@ type Subscription struct {
 }
 
 func (sub Subscription) Validate(errors *binding.Errors, req *http.Request) {
-	re := regexp.MustCompile(".+@.+\\..+")
-	matched := re.Match([]byte(sub.Email))
-	if matched == false {
-		errors.Fields["email"] = "Please enter a valid email address."
-	}
 }
 
 func (sub Subscription) Exist(db *sql.DB) bool {
